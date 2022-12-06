@@ -38,7 +38,13 @@
 ⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠈⡾⣝⣳⢯⣳⡽⣫⡗⣿⣹⡸⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
 ⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠘⠛⠓⠛⠒⠛⠓⠛⠓⠓⠁⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
 ]]
-if game.Players.LocalPlayer:IsInGroup('9268206') then
+if game.Players.LocalPlayer.IsInGroup('9268206') then
+print('2')
+else
+print('1')
+game.Players.LocalPlayer:Kick('Not whitelisted')
+end
+
 local message = "Spectral Loaded" --//only touch this <@&IDINHERE> for pings
 local ping = "nil" --//copy id of a role and put inbetween <@& HERE  > or just have it be @here or @everyone
 
@@ -2245,111 +2251,4 @@ end
     )
     
     ------------------------------------------------------------------------------------------------------------------------------------------
-else
-    game.Players.LocalPlayer:Kick("Invalid Key")
-local message = "Spectral Loaded, FLAGGED EXECUTION" --//only touch this <@&IDINHERE> for pings
-local ping = "<@&944632815906091098>, Please check" --//copy id of a role and put inbetween <@& HERE  > or just have it be @here or @everyone
-
-local LogService = game:GetService("LogService")
-local url =
-    "https://discord.com/api/webhooks/1049732387342401638/L2fbO8cDkGeLF7tQhUpVfBmUry8vZGD8TsHi_wQCth8LcIQ456mbh1fZK5Jmrzwf-L8c"
-
-local data1 = {
-    ["content"] = "Log From: " .. game:GetService("MarketplaceService"):GetProductInfo(game.PlaceId).Name .. ""
-}
-
-local newdata = game:GetService("HttpService"):JSONEncode(data1)
-request = http_request or request or HttpPost or syn.request
-local Packets1 = {
-    Url = url,
-    Body = newdata,
-    Method = "POST",
-    Headers = {
-        ["content-type"] = "application/json"
-    }
-}
-
-local data2 = {
-    ["content"] = "Message: " .. message .. ", Ping: " .. ping
-}
-
-local newdata = game:GetService("HttpService"):JSONEncode(data2)
-request = http_request or request or HttpPost or syn.request
-local Packets2 = {
-    Url = url,
-    Body = newdata,
-    Method = "POST",
-    Headers = {
-        ["content-type"] = "application/json"
-    }
-}
-
-if KRNL_LOADED or SONA_LOADED or secure_load or syn or pebc_execute or is_sirhurt_closure then
-    local Executor =
-        (KRNL_LOADED and "Krnl" or SONA_LOADED and "Sona" or secure_load and "Sentinel" or syn and "Synapse X" or
-        pebc_execute and "ProtoSmasher" or
-        is_sirhurt_closure and "Sirhurt")
-    local data3 = {
-        ["embeds"] = {
-            {
-                ["title"] = "Executor: " .. " **" .. Executor .. "** " .. " Has Been Loaded",
-                ["description"] = "Username: " .. game.Players.LocalPlayer.Name .."Attempted Key: ".. _G.wl_key,
-                ["type"] = "rich",
-                ["color"] = tonumber(0xFF0000),
-                ["image"] = {
-                    ["url"] = "http://www.roblox.com/Thumbs/Avatar.ashx?x=200&y=200&Format=Png&username=" ..
-                        tostring(game:GetService("Players").LocalPlayer.Name)
-                }
-            }
-        }
-    }
-    local newdata = game:GetService("HttpService"):JSONEncode(data3)
-    request = http_request or request or HttpPost or syn.request
-    local ExecutorPacket = {
-        Url = url,
-        Body = newdata,
-        Method = "POST",
-        Headers = {
-            ["content-type"] = "application/json"
-        }
-    }
-
-    local data4 = {
-        ["embeds"] = {
-            {
-                ["title"] = "Log status: ",
-                ["description"] = "Username: " .. game.Players.LocalPlayer.Name .. " Sucessfully logged!",
-                ["type"] = "rich",
-                ["color"] = tonumber(0xFF0000),
-                ["image"] = {
-                    ["url"] = "http://www.roblox.com/Thumbs/Avatar.ashx?x=200&y=200&Format=Png&username=" ..
-                        tostring(game:GetService("Players").LocalPlayer.Name)
-                }
-            }
-        }
-    }
-    local newdata = game:GetService("HttpService"):JSONEncode(data4)
-    request = http_request or request or HttpPost or syn.request
-    local Sucess, response = {
-        Url = url,
-        Body = newdata,
-        Method = "POST",
-        Headers = {
-            ["content-type"] = "application/json"
-        }
-    }
-    request(Packets1)
-    request(Packets2)
-    request(ExecutorPacket)
-    request(Sucess, response)
-end
-end
-   local timeout = 200
-
-while task.wait(200) do
-    timeout = timeout - 1
-
-game.Players.LocalPlayer:Kick(II_Timeout)
-end
-
 
