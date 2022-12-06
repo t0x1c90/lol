@@ -38,7 +38,7 @@
 ⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠈⡾⣝⣳⢯⣳⡽⣫⡗⣿⣹⡸⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
 ⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠘⠛⠓⠛⠒⠛⠓⠛⠓⠓⠁⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
 ]]
-if game.Players.LocalPlayer.IsInGroup('9268206') then
+if game.Players.LocalPlayer:IsInGroup('9268206') then
 local message = "Spectral Loaded" --//only touch this <@&IDINHERE> for pings
 local ping = "nil" --//copy id of a role and put inbetween <@& HERE  > or just have it be @here or @everyone
 
